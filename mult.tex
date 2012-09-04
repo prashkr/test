@@ -1,0 +1,27 @@
+\documentclass[11pt]{article}
+\usepackage[top=1 in, bottom=1 in, left=1 in, right=1 in]{geometry}
+\title{LONG INTEGER MULTIPLICATION}
+\author{PRASHANT KUMAR}
+\begin{document}
+\maketitle
+\section*{\underline{Introduction}}
+This multiplication method is the basic method taught in schools and also called the standard algorithm.We are giver two integers, one is the multiplicand and the other is the multiplier.What we do in this algorithm is that we multiply the multiplicand with each digit of the multiplier and add up properly shifted results to get the final answer. The following example explains the algorithm.
+\section*{\underline{Example}}
+Suppose we multiply two numbers 271838(multiplicand) and 12342(multiplier).\\
+
+\hspace*{4.4 cm}      2271838\\
+\hspace*{5.4 cm}    12342 x\\
+\hspace*{4 cm}      ---------------------  \\
+\hspace*{5 cm}      4543676 \hspace{1 cm}( = 2271838 * 2 )\\
+\hspace*{4.8 cm}    9087352	\hspace{1.2 cm}( = 2271838 * 40 )\\
+\hspace*{4.5 cm}	6815514 \hspace{1.5 cm}( = 2271838 * 300 )\\
+\hspace*{4.3 cm}    4543676 \hspace{1.7 cm}( = 2271838 * 2000 )\\
+\hspace*{4.1 cm}	2271838 \hspace{1.9 cm}( = 2271838 * 10000 )\\
+\hspace*{4 cm}      ---------------------  \\
+\hspace*{4.1 cm}    28039024596\\
+
+First we multiply with 2 and write the result in the $1^{st}$ row.Then we multiply with 4 and write the result in the $2^{nd}$ row shifted towards left by 1 digit.We are shifting because 4 is in tens digit place.We go on like this until we have completely multiplied with all the digits of the multiplier.The final step is the addition process i.e adding all the results column wise.
+
+\section*{\underline{Time Complexity Analysis}}
+In the worst case both the numbers to be multiplied will have same number of digits. Now suppose we have two numbers each with $n$ number of digits. Multiplication of multiplicand by each digit of multiplier will take $O(n)$ time since there are total $n$ multiplications and assuming that single multiplication process takes constant amount of time.Since the multiplier has $n$ digits total computation will result in time complexity of  $O(n^2)$.
+\end{document}
